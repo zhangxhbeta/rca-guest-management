@@ -1,8 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { increment, decrement } from 'actions/counter';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import counterSelect from 'selectors/counter';
+import PropTypes from 'prop-types';
 
 import './App.css';
 

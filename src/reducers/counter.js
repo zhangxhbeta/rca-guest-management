@@ -1,7 +1,7 @@
 import {
   COUNTER_INCREMENT,
   COUNTER_DECREMENT
-} from '../actions/counter';
+} from 'actions/counter';
 
 const initialState = {
   value: parseInt(process.env.REACT_APP_INITIAL_COUNTER, 10)
