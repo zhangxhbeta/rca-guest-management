@@ -38,6 +38,10 @@ export default class MockApiRequest extends Component {
     });
   };
 
+  requestProxy = () => {
+    api.user.throughProxy()
+  };
+
   render() {
     const { machine, result } = this.state;
 
@@ -53,6 +57,8 @@ export default class MockApiRequest extends Component {
           state: {machine} &nbsp;
           <button onClick={this.request}>请求</button>
           <button onClick={this.reset}>复位</button>
+          <button onClick={this.requestProxy}>代理</button>
+
         </p>
       </div>
     );

@@ -12,3 +12,7 @@ export function userAdd() {
 export function success() {
   return axios.get('/success');
 }
+
+export function throughProxy() {
+  return axios.get('/otherapi/hello/world');
+}
