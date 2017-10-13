@@ -24,7 +24,7 @@ axios.interceptors.request.use(
     return config;
   },
   err => {
-    return Promise.reject(err)
+    return Promise.reject(err);
   });
 
 // http response 拦截器

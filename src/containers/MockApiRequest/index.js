@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import api from 'api'
 
 export default class MockApiRequest extends Component {
