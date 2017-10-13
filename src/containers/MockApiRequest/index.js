@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import api from 'api'
 
 export default class MockApiRequest extends Component {
@@ -43,7 +43,7 @@ export default class MockApiRequest extends Component {
   };
 
   render() {
-    const { machine, result } = this.state;
+    const {machine, result} = this.state;
 
     return (
       <div>
@@ -51,14 +51,16 @@ export default class MockApiRequest extends Component {
         <p className="App-intro">
           <input
             type="text"
-            value={result} />
+            value={result}/>
         </p>
         <p>
           state: {machine} &nbsp;
           <button onClick={this.request}>请求</button>
           <button onClick={this.reset}>复位</button>
+        </p>
+        <h2>不存在的请求会通过代理转发到 localhost:4000(package.json配置)</h2>
+        <p>
           <button onClick={this.requestProxy}>代理</button>
-
         </p>
       </div>
     );

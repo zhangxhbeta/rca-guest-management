@@ -4,9 +4,9 @@ import {Provider} from 'react-redux';
 import {Switch, Route, BrowserRouter, Link} from 'react-router-dom';
 import asyncComponent from "components/AsyncComponent";
 
-// bootstrap 主题css
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
+// bootstrap 主题css （启用注释后开启）
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap-theme.css';
 
 // 全局状态
 import store from './store';
@@ -32,8 +32,8 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
         <div>
-          <Link to="/">加减测试</Link>&nbsp;
-          <Link to="/mock-api-request">Mock测试</Link>&nbsp;
+          <Link to="/">Redux Demo</Link>&nbsp;
+          <Link to="/mock-api-request">网络Demo</Link>&nbsp;
           <Link to="/styled-button">StyledComponents</Link>&nbsp;
           <Link to="/error">错误页面</Link>&nbsp;
           <Switch>
