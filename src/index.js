@@ -8,6 +8,7 @@ import store from './store';
 import App from './containers/App';
 import NotFound from './containers/NotFound';
 import MockApiRequest from 'containers/MockApiRequest'
+import StyledButton from 'containers/StyledButton'
 
 import './index.css';
 import logo from './logo.svg';
@@ -23,10 +24,12 @@ ReactDOM.render(
         <div>
           <Link to="/">加减测试</Link>&nbsp;
           <Link to="/mock-api-request">Mock测试</Link>&nbsp;
+          <Link to="/styled-button">StyledComponents</Link>&nbsp;
           <Link to="/error">错误页面</Link>&nbsp;
           <Switch>
             <Route exact path="/" component={App}/>
             <Route path="/mock-api-request" component={MockApiRequest}/>
+            <Route path="/styled-button" component={StyledButton}/>
             <Route component={NotFound}/>
           </Switch>
         </div>
