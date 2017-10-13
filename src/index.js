@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { Switch, Route, HashRouter } from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {Switch, Route, BrowserRouter, Link} from 'react-router-dom';
 
 import store from './store';
 
@@ -15,20 +15,22 @@ import logo from './logo.svg';
 ReactDOM.render(
   <div className="App">
     <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>
-        <a href={'#/mock-api-request'}>Mock测试</a>&nbsp;
-        <a href={'#/error'}>错误页面</a>&nbsp;
-      </h2>
+      <img src={logo} className="App-logo" alt="logo"/>
+      <h2>React 示例</h2>
     </div>
     <Provider store={store}>
-      <HashRouter>
-        <Switch>
-          <Route exactly pattern='/' component={MockApiRequest}/>
-          <Route exactly pattern='/mock-api-request' component={App} />
-          <Route component={NotFound} />
-        </Switch>
-      </HashRouter>
+      <BrowserRouter>
+        <div>
+          <Link to="/">加减测试</Link>&nbsp;
+          <Link to="/mock-api-request">Mock测试</Link>&nbsp;
+          <Link to="/error">错误页面</Link>&nbsp;
+          <Switch>
+            <Route exact path="/" component={App}/>
+            <Route path="/mock-api-request" component={MockApiRequest}/>
+            <Route component={NotFound}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
     </Provider>
   </div>,
   document.getElementById('root')
