@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {Switch, Route, BrowserRouter, Link} from 'react-router-dom';
+import asyncComponent from "components/AsyncComponent";
 
 // bootstrap 主题css
 import 'bootstrap/dist/css/bootstrap.css';
@@ -12,13 +13,15 @@ import store from './store';
 
 // 组件
 import App from 'containers/App';
-import NotFound from 'containers/NotFound';
-import MockApiRequest from 'containers/MockApiRequest'
-import StyledButton from 'containers/StyledButton'
 
 // 样式
 import './index.css';
 import logo from './logo.svg';
+
+// 异步分割打包组件
+const AsyncNotFound = asyncComponent(() => import("containers/NotFound"));
+const AsyncMockApiRequest = asyncComponent(() => import("containers/MockApiRequest"));
+const AsyncStyledButton = asyncComponent(() => import("containers/StyledButton"));
 
 ReactDOM.render(
   <div className="App">
@@ -35,9 +38,9 @@ ReactDOM.render(
           <Link to="/error">错误页面</Link>&nbsp;
           <Switch>
             <Route exact path="/" component={App}/>
-            <Route path="/mock-api-request" component={MockApiRequest}/>
-            <Route path="/styled-button" component={StyledButton}/>
-            <Route component={NotFound}/>
+            <Route path="/mock-api-request" component={AsyncMockApiRequest}/>
+            <Route path="/styled-button" component={AsyncStyledButton}/>
+            <Route component={AsyncNotFound}/>
           </Switch>
         </div>
       </BrowserRouter>
