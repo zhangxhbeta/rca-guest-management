@@ -3,12 +3,19 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {Switch, Route, BrowserRouter, Link} from 'react-router-dom';
 
+// bootstrap 主题css
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+
+// 全局状态
 import store from './store';
 
-import App from './containers/App';
-import NotFound from './containers/NotFound';
+// 组件
+import App from 'containers/App';
+import NotFound from 'containers/NotFound';
 import MockApiRequest from 'containers/MockApiRequest'
 
+// 样式
 import './index.css';
 import logo from './logo.svg';
 
