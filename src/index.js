@@ -4,9 +4,8 @@ import {Provider} from 'react-redux';
 import {Switch, Route, BrowserRouter, Link} from 'react-router-dom';
 import asyncComponent from "components/AsyncComponent";
 
-// bootstrap 主题css （启用注释后开启）
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/css/bootstrap-theme.css';
+// 导入 css
+import './styles/booking.css';
 
 // 全局状态
 import store from './store';
