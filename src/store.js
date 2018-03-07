@@ -6,12 +6,16 @@ import {
 } from 'redux';
 
 import thunkMiddleware from 'redux-thunk';
-import {createLogger} from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import reducers from './reducers';
+import { combineEpics, createEpicMiddleware } from 'redux-observable'
+import rootEpics from './epics'
 
 const rootReducer = combineReducers({
   ...reducers
 });
+
+const epicMiddleware = createEpicMiddleware(rootEpics)
 
 let storeCreator;
 // noinspection JSUnresolvedVariable
@@ -21,7 +25,7 @@ if (process.env.NODE_ENV === 'development') {
     duration: true,
   });
 
-  storeCreator = applyMiddleware(thunkMiddleware, logger);
+  storeCreator = applyMiddleware(epicMiddleware, thunkMiddleware, logger);
 
   // noinspection JSUnresolvedVariable
   if (window.devToolsExtension) {
@@ -35,7 +39,7 @@ if (process.env.NODE_ENV === 'development') {
   }
 
 } else {
-  storeCreator = applyMiddleware(thunkMiddleware);
+  storeCreator = applyMiddleware(epicMiddleware, thunkMiddleware);
 }
 
 export default createStore(rootReducer, storeCreator);

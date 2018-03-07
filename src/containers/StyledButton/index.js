@@ -16,6 +16,10 @@ const Button = styled.button`
   `}
 `;
 
+const TestButton = styled.button`
+font-size: ;
+`;
+
 export default class StyledButton extends Component {
   render() {
     return (

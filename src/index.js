@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {Switch, Route, BrowserRouter, Link} from 'react-router-dom';
 import asyncComponent from "components/AsyncComponent";
+import 'rxjs'
 
 // 导入 css
 import './styles/booking.css';
